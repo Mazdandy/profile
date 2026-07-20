@@ -1,0 +1,3 @@
+[submodule "profile"]
+	path = profile
+	url = <your-profile-repo-url>
