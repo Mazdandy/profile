@@ -302,7 +302,25 @@ body {
 .work-card h3 {
   font-family: 'Poppins', sans-serif;
   font-size: 22px;
+  margin-bottom: 12px;
+}
+
+.work-card h4 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 18px;
+  margin: 16px 0 8px 0;
+  color: var(--dark);
+}
+
+.work-card ul {
+  margin-left: 20px;
+  margin-bottom: 16px;
+  color: var(--gray);
+}
+
+.work-card li {
   margin-bottom: 8px;
+  line-height: 1.6;
 }
 
 .work-card p {
