@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register | QA Engineer Portal</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="auth-page">
+    <div class="floating-shapes" aria-hidden="true">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+        <div class="shape shape-4"></div>
+    </div>
+
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">✨ Portfolio</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="register.html" class="btn btn-primary">Register</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="auth-main">
+        <div class="container auth-layout">
+            <section class="auth-aside">
+                <span class="auth-kicker">Join the mock portal</span>
+                <h1 class="auth-title">
+                    Create a
+                    <span class="highlight">test account</span>
+                </h1>
+                <p class="auth-copy">
+                    Registration is fully mocked in the browser. New accounts are saved locally so you can immediately
+                    test the login page and demo the complete auth journey.
+                </p>
+                <div class="demo-panel">
+                    <h2>How this works</h2>
+                    <p>- Accounts are stored in your browser only.</p>
+                    <p>- Duplicate emails are blocked to mimic a real API check.</p>
+                    <p>- Successful registration redirects you to the login page.</p>
+                </div>
+            </section>
+
+            <section class="auth-card">
+                <h1>Create account</h1>
+                <p>Enter mock details below. No server request or database connection is used.</p>
+
+                <form class="auth-form" data-auth="register" novalidate>
+                    <div class="form-row">
+                        <div class="form-field">
+                            <label for="register-name">Full name</label>
+                            <input id="register-name" name="name" type="text" placeholder="Dwi Fajar Dandy Saputra" required>
+                        </div>
+
+                        <div class="form-field">
+                            <label for="register-role">Role</label>
+                            <input id="register-role" name="role" type="text" placeholder="QA Engineer" required>
+                        </div>
+                    </div>
+
+                    <div class="form-field">
+                        <label for="register-email">Email</label>
+                        <input id="register-email" name="email" type="email" placeholder="you@example.com" required>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-field">
+                            <label for="register-password">Password</label>
+                            <input id="register-password" name="password" type="password" placeholder="Minimum 6 characters" required>
+                        </div>
+
+                        <div class="form-field">
+                            <label for="register-confirm-password">Confirm password</label>
+                            <input id="register-confirm-password" name="confirmPassword" type="password" placeholder="Repeat password" required>
+                        </div>
+                    </div>
+
+                    <p class="form-help">Tip: after registering, use the same email and password on the login page.</p>
+
+                    <p class="status-message" data-status aria-live="polite"></p>
+
+                    <button type="submit" class="btn btn-primary">Register</button>
+
+                    <p class="auth-switch">
+                        Already have an account?
+                        <a href="login.html">Go to login</a>
+                    </p>
+                </form>
+            </section>
+        </div>
+    </main>
+
+    <script src="auth.js"></script>
+</body>
+
+</html>
