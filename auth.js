@@ -1,4 +1,5 @@
 const STORAGE_KEY = 'mockAuthUsers';
+const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 
 const defaultUsers = [
   {
@@ -37,6 +38,10 @@ function setStatus(element, message, type) {
   if (type) {
     element.classList.add(type === 'success' ? 'is-success' : 'is-error');
   }
+}
+
+function isValidEmail(email) {
+  return EMAIL_REGEX.test(email);
 }
 
 function handleLogin(form) {
@@ -84,6 +89,11 @@ function handleRegister(form) {
 
     if (!name || !role || !email || !password || !confirmPassword) {
       setStatus(status, 'Please complete all fields before continuing.', 'error');
+      return;
+    }
+
+    if (!isValidEmail(email)) {
+      setStatus(status, 'Please enter a valid email address, for example: name@example.com.', 'error');
       return;
     }
 
