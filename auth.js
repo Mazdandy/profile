@@ -125,9 +125,9 @@ function handleRegister(form) {
     setStatus(status, 'Registration successful. Redirecting to login...', 'success');
     form.reset();
 
-    window.setTimeout(() => {
-      window.location.href = 'login.html';
-    });
+    // window.setTimeout(() => {
+    //   window.location.href = 'login.html';
+    // }, 11205000);
   });
 }
 
