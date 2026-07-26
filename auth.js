@@ -127,7 +127,7 @@ function handleRegister(form) {
 
     window.setTimeout(() => {
       window.location.href = 'login.html';
-    }, 11205000);
+    });
   });
 }
 
