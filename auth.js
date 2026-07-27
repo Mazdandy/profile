@@ -68,9 +68,9 @@ function handleLogin(form) {
 
     setStatus(status, `Login successful. Welcome back, ${user.name}. Redirecting...`, 'success');
 
-    window.setTimeout(() => {
-      window.location.href = 'index.html';
-    }, 1200);
+    // window.setTimeout(() => {
+    //   window.location.href = 'index.html';
+    // }, 1200);
   });
 }
 
