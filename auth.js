@@ -68,9 +68,9 @@ function handleLogin(form) {
 
     setStatus(status, `Login successful. Welcome back, ${user.name}. Redirecting...`, 'success');
 
-    // window.setTimeout(() => {
-    //   window.location.href = 'index.html';
-    // }, 1200);
+    window.setTimeout(() => {
+      window.location.href = 'index.html';
+    }, 3000);
   });
 }
 
@@ -125,9 +125,9 @@ function handleRegister(form) {
     setStatus(status, 'Registration successful. Redirecting to login...', 'success');
     form.reset();
 
-    // window.setTimeout(() => {
-    //   window.location.href = 'login.html';
-    // }, 11205000);
+    window.setTimeout(() => {
+      window.location.href = 'login.html';
+    }, 3000);
   });
 }
 
