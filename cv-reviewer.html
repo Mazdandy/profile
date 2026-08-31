@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CV Reviewer | QA Engineer Portfolio</title>
+  <meta name="description" content="Get instant, structured feedback on your CV. Our rule-based engine scores your resume across 6 key dimensions and provides actionable improvement tips.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="cv-reviewer.css">
+</head>
+
+<body>
+  <!-- Floating background shapes (reused from main site) -->
+  <div class="floating-shapes">
+    <div class="shape shape-1"></div>
+    <div class="shape shape-2"></div>
+    <div class="shape shape-3"></div>
+    <div class="shape shape-4"></div>
+  </div>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="container">
+      <a href="index.html" class="logo">✨ Portfolio</a>
+      <ul class="nav-links">
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#work">Work</a></li>
+        <li><a href="index.html#skills">Skills</a></li>
+        <li><a href="cv-reviewer.html" class="nav-active">CV Reviewer</a></li>
+        <li><a href="login.html">Login</a></li>
+        <li><a href="index.html#contact" class="btn btn-primary">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+    <!-- Hero Section -->
+    <header class="cvr-hero">
+      <div class="container">
+        <div class="cvr-hero-inner">
+          <span class="cvr-badge">✦ Free &amp; Instant</span>
+          <h1 class="cvr-hero-title">
+            <span class="word" style="animation-delay:0.1s">AI-Style</span>
+            <span class="word highlight" style="animation-delay:0.3s">CV</span>
+            <span class="word highlight" style="animation-delay:0.5s">Reviewer</span>
+          </h1>
+          <p class="cvr-hero-sub">Paste your CV below and get a detailed score across 6 key dimensions — contact info, experience, skills, formatting and more.</p>
+          <div class="cvr-stats">
+            <div class="cvr-stat">
+              <span class="cvr-stat-value">6</span>
+              <span class="cvr-stat-label">Dimensions</span>
+            </div>
+            <div class="cvr-stat-divider"></div>
+            <div class="cvr-stat">
+              <span class="cvr-stat-value">100</span>
+              <span class="cvr-stat-label">Max Score</span>
+            </div>
+            <div class="cvr-stat-divider"></div>
+            <div class="cvr-stat">
+              <span class="cvr-stat-value">0s</span>
+              <span class="cvr-stat-label">Wait Time</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Input Section -->
+    <section id="input-section" class="cvr-input-section">
+      <div class="container">
+        <div class="cvr-input-card">
+
+          <!-- Tab Toggle -->
+          <div class="cvr-tabs" role="tablist" aria-label="Input method">
+            <button id="tab-paste" class="cvr-tab cvr-tab--active" role="tab" aria-selected="true" aria-controls="panel-paste">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+              Paste Text
+            </button>
+            <button id="tab-upload" class="cvr-tab" role="tab" aria-selected="false" aria-controls="panel-upload">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 16 12 12 8 16"></polyline><line x1="12" y1="12" x2="12" y2="21"></line><path d="M20.39 18.39A5 5 0 0 0 18 9h-1.26A8 8 0 1 0 3 16.3"></path></svg>
+              Upload File
+            </button>
+          </div>
+
+          <!-- Paste Panel -->
+          <div id="panel-paste" class="cvr-panel" role="tabpanel" aria-labelledby="tab-paste">
+            <div class="cvr-textarea-wrapper">
+              <textarea
+                id="cv-text-input"
+                class="cvr-textarea"
+                placeholder="Paste your full CV or resume here…&#10;&#10;Include sections like:&#10;• Contact Information (name, email, phone, LinkedIn)&#10;• Professional Summary&#10;• Work Experience with bullet points&#10;• Skills&#10;• Education"
+                aria-label="CV text input"
+                spellcheck="true"
+              ></textarea>
+              <div class="cvr-textarea-footer">
+                <span id="char-count" class="cvr-char-count">0 characters</span>
+                <span id="char-hint" class="cvr-char-hint">Minimum 200 characters</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Upload Panel -->
+          <div id="panel-upload" class="cvr-panel cvr-panel--hidden" role="tabpanel" aria-labelledby="tab-upload">
+            <div id="drop-zone" class="cvr-dropzone" tabindex="0" aria-label="File drop zone">
+              <div class="cvr-dropzone-icon">
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 16 12 12 8 16"></polyline><line x1="12" y1="12" x2="12" y2="21"></line><path d="M20.39 18.39A5 5 0 0 0 18 9h-1.26A8 8 0 1 0 3 16.3"></path></svg>
+              </div>
+              <p class="cvr-dropzone-title">Drop your CV here</p>
+              <p class="cvr-dropzone-sub">or <label for="file-input" class="cvr-file-label">browse files</label></p>
+              <p class="cvr-dropzone-formats">Supports: .txt, .pdf</p>
+              <input id="file-input" type="file" accept=".txt,.pdf" class="cvr-file-input" aria-label="Upload CV file">
+            </div>
+            <div id="file-info" class="cvr-file-info cvr-hidden">
+              <span id="file-name" class="cvr-file-name"></span>
+              <button id="file-remove" class="cvr-file-remove" aria-label="Remove file">✕</button>
+            </div>
+          </div>
+
+          <!-- Demo Prefill -->
+          <div class="cvr-demo-row">
+            <button id="btn-demo" class="cvr-demo-btn">Try with sample CV</button>
+          </div>
+
+          <!-- Analyze Button -->
+          <div class="cvr-analyze-row">
+            <div id="input-error" class="cvr-input-error cvr-hidden" role="alert"></div>
+            <button id="btn-analyze" class="btn btn-primary cvr-analyze-btn">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+              Analyze My CV
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Results Section (hidden until analysis runs) -->
+    <section id="results-section" class="cvr-results-section cvr-hidden" aria-live="polite">
+      <div class="container">
+
+        <!-- Overall Score -->
+        <div class="cvr-overall-card">
+          <div class="cvr-overall-left">
+            <h2 class="cvr-section-heading">Your CV Score</h2>
+            <div class="cvr-gauge-wrapper">
+              <svg class="cvr-gauge-svg" viewBox="0 0 160 160" aria-hidden="true">
+                <circle class="cvr-gauge-track" cx="80" cy="80" r="66" />
+                <circle id="gauge-fill" class="cvr-gauge-fill" cx="80" cy="80" r="66" />
+              </svg>
+              <div class="cvr-gauge-center">
+                <span id="overall-score-val" class="cvr-gauge-score">0</span>
+                <span class="cvr-gauge-label">/ 100</span>
+                <span id="overall-grade" class="cvr-gauge-grade">—</span>
+              </div>
+            </div>
+          </div>
+          <div class="cvr-overall-right">
+            <div id="overall-summary" class="cvr-overall-summary"></div>
+            <div class="cvr-result-actions">
+              <button id="btn-copy" class="btn btn-secondary cvr-action-btn">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                Copy Feedback
+              </button>
+              <button id="btn-print" class="btn btn-secondary cvr-action-btn">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg>
+                Print
+              </button>
+              <button id="btn-reanalyze" class="btn btn-primary cvr-action-btn">
+                ↺ Re-analyze
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Dimension Breakdown -->
+        <div class="cvr-breakdown">
+          <h2 class="cvr-section-heading">Dimension Breakdown</h2>
+          <div id="dimension-grid" class="cvr-dimension-grid">
+            <!-- Dimension cards injected by JS -->
+          </div>
+        </div>
+
+        <!-- Strengths & Issues -->
+        <div class="cvr-panels-row">
+          <div class="cvr-feedback-panel cvr-panel-strengths">
+            <div class="cvr-panel-header">
+              <span class="cvr-panel-icon">✅</span>
+              <h3 class="cvr-panel-title">Strengths</h3>
+            </div>
+            <ul id="strengths-list" class="cvr-feedback-list"></ul>
+          </div>
+          <div class="cvr-feedback-panel cvr-panel-issues">
+            <div class="cvr-panel-header">
+              <span class="cvr-panel-icon">🔧</span>
+              <h3 class="cvr-panel-title">Areas to Improve</h3>
+            </div>
+            <ul id="issues-list" class="cvr-feedback-list"></ul>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p>© 2021 Dwi Fajar Dandy Saputra. Made with 💖</p>
+    </div>
+  </footer>
+
+  <script src="cv-reviewer.js"></script>
+</body>
+
+</html>
